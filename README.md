@@ -1,13 +1,14 @@
-# praktikum
+# PemrogramanIV_714240052
 
-A new Flutter project.
+Tugas Pemrograman IV
+
+## Praktikum
+
+Flutter project for the Praktikum Pemrograman IV course.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
+To get started with Flutter development, see the links below:
 - [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
 - [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
