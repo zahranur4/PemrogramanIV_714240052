@@ -12,10 +12,8 @@ class MyInputFormState extends State<MyInputForm> {
   final TextEditingController _controllerEmail = TextEditingController();
   final TextEditingController _controllerNama = TextEditingController();
 
-  // List Map untuk menampung data sementara
   final List<Map<String, dynamic>> _myDataList = [];
   
-  // Variabel penanda mode edit
   Map<String, dynamic>? editedData;
 
   @override
@@ -46,7 +44,6 @@ class MyInputFormState extends State<MyInputForm> {
     return null;
   }
 
-  // Method Tambah & Update Data
   void _addData() {
     final data = {
       'name': _controllerNama.text,
@@ -55,10 +52,9 @@ class MyInputFormState extends State<MyInputForm> {
 
     setState(() {
       if (editedData != null) {
-        // Mode Edit: Perbarui data yang dipilih
         editedData!['name'] = data['name'];
         editedData!['email'] = data['email'];
-        editedData = null; // Reset kembali mode edit
+        editedData = null; 
       } else {
         // Mode Insert: Tambahkan data baru
         _myDataList.add(data);
@@ -68,7 +64,6 @@ class MyInputFormState extends State<MyInputForm> {
     });
   }
 
-  // Method memasukkan data ke controller untuk diedit
   void _editData(Map<String, dynamic> data) {
     setState(() {
       _controllerEmail.text = data['email'];
@@ -77,7 +72,6 @@ class MyInputFormState extends State<MyInputForm> {
     });
   }
 
-  // Method Dialog Konfirmasi Hapus Data
   void _deleteData(Map<String, dynamic> data) {
     showDialog(
       context: context,
@@ -117,7 +111,6 @@ class MyInputFormState extends State<MyInputForm> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            // Section Input Form
             Form(
               key: _formKey,
               child: Column(
@@ -168,7 +161,6 @@ class MyInputFormState extends State<MyInputForm> {
             ),
             const SizedBox(height: 20),
 
-            // Section Judul List Data
             const Center(
               child: Text(
                 'List Data',
@@ -177,7 +169,6 @@ class MyInputFormState extends State<MyInputForm> {
             ),
             const SizedBox(height: 10),
 
-            // Section ListView (Read, Edit Button, Delete Button)
             Expanded(
               child: ListView.builder(
                 shrinkWrap: true,

@@ -19,7 +19,6 @@ class MyFormValidationState extends State<MyFormValidation> {
     super.dispose();
   }
 
-  // 1. Method Validasi Email (Wajib diisi & Format Regex Email)
   String? _validateEmail(String? value) {
     const String expression =
         r"[a-zA-Z0-9+._%-+]{1,256}\@[a-zA-Z0-9][a-zA-Z0-9\-]{0,64}(\.[a-zA-Z0-9][a-zA-Z0-9\-]{0,25})+";
@@ -34,7 +33,6 @@ class MyFormValidationState extends State<MyFormValidation> {
     return null;
   }
 
-  // 2. Method Validasi Nama (Minimal 3 Karakter)
   String? _validateNama(String? value) {
     if (value == null || value.length < 3) {
       return 'Masukkan setidaknya 3 karakter';
@@ -42,7 +40,6 @@ class MyFormValidationState extends State<MyFormValidation> {
     return null;
   }
 
-  // 3. Method Menampilkan Result Dialog (Tugas Tantangan di Modul)
   void _showResultDialog() {
     showDialog(
       context: context,
@@ -81,7 +78,6 @@ class MyFormValidationState extends State<MyFormValidation> {
             key: _formKey,
             child: Column(
               children: [
-                // Input Email dengan Validator
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
@@ -99,7 +95,6 @@ class MyFormValidationState extends State<MyFormValidation> {
                     ),
                   ),
                 ),
-                // Input Nama dengan Validator
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
@@ -118,7 +113,6 @@ class MyFormValidationState extends State<MyFormValidation> {
                 ),
                 const SizedBox(height: 10),
 
-                // Tombol Submit untuk Validasi
                 ElevatedButton(
                   child: const Text("Submit"),
                   onPressed: () {
@@ -129,7 +123,7 @@ class MyFormValidationState extends State<MyFormValidation> {
                           duration: Duration(seconds: 1),
                         ),
                       );
-                      // Panggil dialog untuk menampilkan data yang diisi
+                      
                       _showResultDialog();
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
 import 'input_validation.dart';
-import 'input_form.dart'; // Import file baru
+import 'input_form.dart'; 
 
 class DynamicBottomNavbar extends StatefulWidget {
   const DynamicBottomNavbar({super.key});
@@ -16,7 +16,7 @@ class _DynamicBottomNavbarState extends State<DynamicBottomNavbar> {
   final List<Widget> _pages = <Widget>[
     const MyInput(),
     const MyFormValidation(),
-    const MyInputForm(), // Tambahkan di sini
+    const MyInputForm(), 
   ];
 
   void onTabTapped(int index) {

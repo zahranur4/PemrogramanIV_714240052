@@ -28,16 +28,13 @@ class MyInput extends StatefulWidget {
 }
 
 class MyInputState extends State<MyInput> {
-  // Controller untuk TextField
+
   final TextEditingController _controller = TextEditingController();
 
-  // Variabel state untuk Switch
   bool lightOn = false;
 
-  // Variabel state untuk Radio
   String? language;
 
-  // 1. Variabel state untuk Checkbox
   bool agree = false;
 
   @override
@@ -46,7 +43,6 @@ class MyInputState extends State<MyInput> {
     super.dispose();
   }
 
-  // Method Snackbar khusus Radio
   void showSnackbarRadio(String selectedLanguage) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -56,7 +52,6 @@ class MyInputState extends State<MyInput> {
     );
   }
 
-  // 2. Method Snackbar khusus Checkbox
   void showSnackbarCheckbox(bool value) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -77,7 +72,6 @@ class MyInputState extends State<MyInput> {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              // --- 1. TextField ---
               TextField(
                 controller: _controller,
                 decoration: const InputDecoration(
@@ -101,7 +95,6 @@ class MyInputState extends State<MyInput> {
               ),
               const SizedBox(height: 20),
 
-              // --- 2. Switch ---
               Switch(
                 value: lightOn,
                 onChanged: (bool value) {
@@ -118,7 +111,6 @@ class MyInputState extends State<MyInput> {
               ),
               const SizedBox(height: 20),
 
-              // --- 3. Radio List Tile ---
               Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -159,7 +151,6 @@ class MyInputState extends State<MyInput> {
               ),
               const SizedBox(height: 20),
 
-              // --- 4. Checkbox List Tile ---
               CheckboxListTile(
                 title: const Text('Agree / Disagree'),
                 value: agree,
